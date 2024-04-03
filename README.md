@@ -8,10 +8,10 @@ Install the Packages-
   #npm install 
 
 Make a .env file in the base directory and add the Following-
-  PORT  = Your_Port
-  MONGO_URI = local_mongo_db_address
-  JWT_STRING = JSON_web_token_string
-  DBNAME = Mongo_database_name
+  PORT  = Your_Port,
+  MONGO_URI = local_mongo_db_address,
+  JWT_STRING = JSON_web_token_string,
+  DBNAME = Mongo_database_name,
 
 Finally Run- 
   npm run dev 
