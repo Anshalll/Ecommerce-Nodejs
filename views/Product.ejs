@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Anshal's Ecommerce Site</title>
+        <meta name="description" content="Buy Electronics at Best Price">
+        <link rel="stylesheet" href="/stylesheet/index.css">
+        <link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+     </head>
+
+    <body>
+        <header>
+
+            <div open class="login-dialog">
+               <dialog class="dialog-content">
+      
+                  <div class="login-form">
+      
+                     <div class="form-header">
+                        <h3>Login</h3>
+                        <button id="close-dialog"> <span class="material-symbols-outlined"> close </span></button>
+                     </div>
+      
+                     <form action="">
+                     <div class="input-fields">
+                        <label for="name">Username</label>
+                        <input type="text"  id="username" name="username" placeholder="Enter username or email">
+                      </div>
+      
+                        <div class="input-fields">
+                              <label for="password">Password</label>
+                              <input type="password" id="password" name="password" placeholder="Enter Password">
+                        </div>
+                        <a href="/register">Do not have an account? Get one!</a>
+                        <button id="login-user"  type="submit">Login</button>
+                        <a href="/forgotpassword">Forgot Password?</a>
+      
+                     </form>
+                     </div>
+               </dialog>
+            </div>
+      
+               <%- include('./components/Sidebar.ejs') %>
+               <%- include('./components/Navbar.ejs') %>
+            </header>
+   
+   
+            <main class="product-details-data">
+           
+                <section class="product-detail">
+                    <% if (ProductData) { %>
+        
+        
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="../uploads/<%= ProductData.product_image %>" alt="Loading">
+                        </div>
+        
+                        <div class="product-data">
+                           <h1><%= ProductData.title %></h1>
+                           <p id="desc"><%= ProductData.description %></p>
+                           <p id="price"><s>₹7000</s> ₹<%= ProductData.price %></p>
+                           <p id="seller">Seller name</p>
+                           <% if(ProductData.Ratings===0) { %>
+                            <p>No ratings</p>
+                            <% } %>
+    
+                            <% if(ProductData.Ratings> 0) { %>
+                                <div class="Ratings-product">
+                                    <div class="ratings">
+                                        <img src="/images/yellow_star.png" alt="Loading" width="15">
+                                        <img src="/images/black_star.png" alt="Loading" width="15">
+                                        <img src="/images/black_star.png" alt="Loading" width="15">
+                                        <img src="/images/black_star.png" alt="Loading" width="15">
+                                        <img src="/images/black_star.png" alt="Loading" width="15">
+    
+    
+                                     </div>
+                                  <span> (<%= ProductData.Ratings %>)</span>
+                                </div>
+                            <% } %>
+                           <p id="dofdelivery"><img src="/images/deliver.png" alt="Loading"> 2 Days</p>
+                     <% if (Loggeduser) { %>
+                        <div class="btn-product-data">
+
+                            <a href="" id="buynow-btn">Buy Now</a>
+                            
+                            <a href="" id="addtocart-btn">Add to cart</a>
+                         </div>
+                         <% } else { %>
+                            <button class="loginbtn" id="login-btn">Login to purchase</button>
+                   <%  } %>
+                        
+                            </div>
+                    </div>
+        
+                    <% } %>
+        
+                </section>
+
+
+                <section aria-label="Monitors-Section">
+                    <div class="product-data">
+                       <span id="backwordbtn" class="material-symbols-outlined">
+                       arrow_back_ios
+                       </span>
+                       <h1 class="cat-header"><%= category %></h1>
+        
+                       <div class="product-card-data scrollbar">
+                          <% Data.forEach(product=> { %>
+                       
+        
+                          <a href="/product/<%=  product._id %>?category=<%= product.category %>">
+                             <div class="product-card">
+                            
+                                <div class="product-image">
+        
+                                    <img  src="/uploads/<%=  product.product_image %>" alt="Loading">
+                                </div>
+               
+                                <div class="product-details">
+        
+                                <%= product.title.slice(0, 25) %>...
+                                <% if(product.Ratings===0) { %>
+                                <p>No ratings</p>
+                                <% } %>
+        
+                                <% if(product.Ratings> 0) { %>
+                                    <div class="Ratings-product">
+                                        <div class="ratings">
+                                            <img src="/images/yellow_star.png" alt="Loading" width="15">
+                                            <img src="/images/black_star.png" alt="Loading" width="15">
+                                            <img src="/images/black_star.png" alt="Loading" width="15">
+                                            <img src="/images/black_star.png" alt="Loading" width="15">
+                                            <img src="/images/black_star.png" alt="Loading" width="15">
+        
+        
+                                         </div>
+                                      <span> (<%= product.Ratings %>)</span>
+                                    </div>
+                                <% } %>
+                                <div class="card-footer">
+        
+                                <p>
+                                   ₹<%= product.price %>
+        
+                                </p>
+                                <% if (Loggeduser) { %>
+                                      
+                                   <button><img title="Add to cart" src="/images/cart.png" alt="Loading" width="25"></button>
+        
+                                <%  } %>
+                            </div>
+        
+                        </div>
+        
+                            </div>
+                        </a>
+        
+        
+        
+                        
+                          <% }) %>
+                       </div>
+        
+                       <span id="forwardbtn" class="material-symbols-outlined">
+                       arrow_forward_ios
+                       </span>
+                    </div>
+                 </section>
+        
+
+
+            </main>
+        
+        
+            <footer>
+                <%- include("../views/components/Footer.ejs") %>
+            </footer>
+        
+            <script src="/scripts/main.js"></script>
+            <script src="/scripts/Dialog.js"></script>
+
+        </body>
+
+
+</html>

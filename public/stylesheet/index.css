@@ -1,0 +1,990 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --HEADER: #E3E6E6;
+  --BTNCOLOR: rgb(243, 243, 8)
+}
+
+body{
+ background-color: var(--HEADER);   
+ width: 100%;
+ height: 100vh;
+ overflow-y: auto;
+
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* Navbar*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.7cm;
+  background-color: var(--HEADER);
+}
+
+.navtitle{
+    padding-left: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navtitle button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+
+}
+
+.mainnavroutes{
+    display: none;
+}
+
+.navroutes ul {
+  padding-right: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navroutes ul li {
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.navroutes ul li a:any-link {
+  color: black;
+  text-decoration: none;
+
+}
+
+
+.nav .navinput{
+    width: 40%;
+    height: 60%;
+    display: none;
+}
+
+.nav .navinput input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-weight: bold;
+    border: 2px solid var(--BTNCOLOR) ;
+    border-radius: 7px;
+    padding-left: 10px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+.nav .navinput .searchditemslist{
+    position: absolute;
+    display: none;
+    width: 40%;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+
+
+}
+
+.nav .navinput .searchditemslist ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.nav .navinput .searchditemslist ul li{
+    list-style: none;
+
+
+}
+
+.nav .loginbtn{
+    background-color: var(--BTNCOLOR);
+    padding: 10px  20px;
+    border-radius: 20px;
+    cursor: pointer;
+   
+}
+
+/* Sidebar */
+
+
+.sidebar{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    right: 400%;
+    transition-property: right;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    z-index: 1000;
+
+}
+
+
+.sidebar .sidebarcontent{
+    display: flex;
+    width: 60%;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    height: 100vh;
+    flex-direction: column;
+
+}
+.sidebar .sidebarfake{
+  
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.418);
+    height: 100vh;
+}
+
+.sidebar .closeMenuDiv{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid var(--BTNCOLOR);
+
+}
+
+.sidebar .closeMenuDiv p{
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size:larger;
+    font-weight: bold;
+} 
+
+.sidebar .closeMenuDiv button{
+    background-color: transparent;
+    border: none;
+
+}
+
+.sidebar .sidebarContents ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+     position: relative;
+     left: 30px;
+     top: 20px;
+}
+
+.sidebar .sidebarContents ul li{
+    list-style-type: none;
+
+
+}
+
+
+.sidebar .sidebarContents ul li a:any-link{
+    color: black;
+    text-decoration: none;
+    font-family: 'Josefin Sans' , sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+/* Home Header */
+#main-content{
+    height: max-content;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerMain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    
+    margin-top: 40px;
+    z-index: -10;
+}
+
+.header-home button{
+    display: flex;
+    padding: 15px 30px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--BTNCOLOR);
+}
+
+.header-home h1{
+    font-size: 27px;
+    text-align: center;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.header-home{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-home p{
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+.header-home button a:any-link{
+    color: black;
+    text-decoration: none;
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+.header-Home-img{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.And-navinput{
+    width: 100%;
+    padding: 20px;
+    height: 2.5cm;
+    
+
+}
+
+.And-navinput input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-weight: bold;
+    border: 2px solid var(--BTNCOLOR) ;
+    border-radius: 7px;
+    padding-left: 10px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+ .And-navinput .searchditemslist{
+    display: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: white;
+
+}
+
+ .And-navinput .searchditemslist ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+ .And-navinput .searchditemslist ul li{
+    list-style: none;
+
+
+}
+
+
+/* Categories */
+
+#Section-Categories{
+    margin-top: 40px;
+}
+
+.cat-menu{
+    display: flex;
+    position: relative;
+}
+
+.cat-menu .backwordbtn{
+    position: absolute;
+
+}
+
+
+.cat-menu .backwordbtn{
+    position: absolute;
+    
+}
+.categories{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+
+
+.categories .group-card{
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+
+    flex-direction: column;
+    border: 2px solid var(--BTNCOLOR);
+}
+
+.categories .categoriesCard{
+    
+   
+    height: 200px;
+ 
+    width: 300px;
+ 
+
+}
+
+.categories .group-card .cat-name{
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size: large;
+}
+
+.categories .categoriesCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cat-header{
+    font-size: larger;
+    font-family: 'Poopins' , sans-serif;
+    position: relative;
+    display: flex;
+    left: 20px;
+    width: max-content;
+}
+
+
+ #forwardbtn{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(251, 255, 0, 0.664);
+    cursor: pointer;
+
+
+
+}
+
+#backwordbtn{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgba(251, 255, 0, 0.664);
+
+}
+
+#backwordbtn:hover ,#forwardbtn:hover {
+    background-color: rgba(0, 0, 0, 0.815);
+}
+
+
+/* card */
+
+
+.product-data{
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+}
+
+.product-card-data{
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    gap: 20px;
+    padding-left: 20px;
+
+}
+
+.product-card{
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+  
+
+}
+
+.product-details{
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Ratings-product{
+    display: flex;
+    gap: 20px;
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+
+.product-card-data a:any-link{
+    text-decoration-line: none;
+    text-decoration: none;
+    color: black;
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+
+
+.card-footer button{
+
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+
+.product-card .product-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+
+    height: 200px;
+   
+
+}
+
+.product-card .product-image img{
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+    object-position: center;
+}
+
+
+.new-launches{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+
+}
+
+.new-launches h1{
+    font-family: 'Poppins' , sans-serif;
+}
+
+.new-launches  h3{
+   
+    font-weight: 500;
+}
+
+.new-launches .products{
+    width: 90%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+.new-launches .products .new-lauches-details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Josefin Sans' , sans-serif;
+    
+}
+
+.new-launches .products .new-lauches-details h3{
+   font-family: 'Josefin Sans' , sans-serif;
+    
+}
+
+.explore-new-products{
+    border: none;
+    background-color: var(--BTNCOLOR);
+    font-family: 'Josefin Sans' , sans-serif;
+    width: max-content;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+/* Admin Section*/
+
+.AdminText{
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+.AdminLogout{
+    background-color: var(--BTNCOLOR);
+}
+
+
+/* footer */
+
+.footerSection{
+    margin-top: 10%;
+    background-color: white;
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+}
+
+
+
+
+.footerSection .footer-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3%;
+    width: 70%;
+    gap: 20px;
+}
+
+.footerSection .footer-content ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+
+}
+
+.footerSection .footer-content ul li{
+   list-style: none;
+   
+}
+
+.footerSection .footer-content ul li a:any-link{
+    
+        font-family: 'Josefin Sans' , sans-serif;
+        text-decoration: none;
+        color: rgb(41, 38, 38);
+ 
+ }
+
+.footerSection .footer-content ul p{
+    font-family: 'Poppins' , sans-serif;
+    font-size: larger;
+    border-bottom: 1px solid gray;
+}
+
+.footerSection .footer-content ul p{
+    font-family: 'Poppins' , sans-serif;
+}
+
+
+.footer-footer{
+    padding: 20px;
+    margin-top: 20px;
+    border-top:  2px solid rgba(0, 0, 0, 0.507);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.footer-footer p{
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+.footer-footer h1{
+    font-family: 'Poppins' , sans-serif;
+}
+
+
+
+/* Dialog */
+
+.login-dialog{
+    
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 500;
+    background-color: rgba(0, 0, 0, 0.253);
+}
+
+
+.dialog-content{
+    
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+    width: 95%;
+    background-color: var(--HEADER);
+    
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-form form{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.login-form .form-header{
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.432);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.login-form .form-header button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.input-fields{
+    font-family: 'Josefin Sans' , sans-serif ;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+
+.input-fields input{
+    padding: 20px;
+    outline: none;
+    border: 2px solid var(--BTNCOLOR);
+    border-radius: 20px;
+}
+
+.login-form #login-user{
+    
+
+    background-color: var(--BTNCOLOR);
+    padding: 20px;
+    width: 100%;border: none;
+    border-radius: 20px;
+
+}
+
+.login-form a:any-link{
+    color: rgb(29, 13, 170);
+    text-decoration: none;
+    font-family: 'Josefin Sans' , sans-serif;
+}
+
+
+/* Product Page */
+
+.product-detail{
+    width: 100%;
+    height: max-content;
+
+}
+
+
+.product-detail .product{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+}
+
+.product-detail .product .product-image{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail .product .product-data{
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.product-detail .product .product-data s{
+    color: red;
+}
+
+.product-detail .product .product-data h1{
+
+    font-family: 'Poppins' , sans-serif;
+    
+}
+
+
+.product-detail .product .product-data  p{
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size: small;
+}
+
+
+.product-detail .product .product-data #price{
+    font-family: 'Poppins' , sans-serif;
+    font-size: larger;
+}   
+
+
+.product-detail .product .product-data #dofdelivery{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}  
+
+.product-detail .product .product-data #dofdelivery img{
+    width: 25px;
+}
+
+.product-detail .product .product-image img{
+    width: 400px;
+    object-fit: contain;
+    object-position: center;
+    height: 400px;
+    
+    
+}
+
+.product-detail .product .product-data .btn-product-data{
+   display: flex;
+   gap: 20px;
+   align-items: center;
+
+}
+
+.product-detail .product .product-data .btn-product-data{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+ }
+
+
+
+.product-detail .product .product-data .btn-product-data #buynow-btn:any-link{
+    color: black;
+    background-color: var(--BTNCOLOR);
+    text-decoration: none;
+    width: 3cm;
+    display: flex;
+    align-items: center;
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size: small;
+    justify-content: center;
+    border-radius: 20px;
+    height: 0.9cm;
+}
+
+.product-detail .product .product-data .btn-product-data #addtocart-btn:any-link{
+    color: black;
+    border: 2px solid black;
+    text-decoration: none;
+    width: 3cm;
+    display: flex;
+    align-items: center;
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size: small;
+    justify-content: center;
+    border-radius: 20px;
+    height: 0.9cm;
+}
+
+.product-detail .product .product-data #login-btn{
+    color: black;
+    background-color: var(--BTNCOLOR);
+    text-decoration: none;
+    width: 5cm;
+    display: flex;
+    align-items: center;
+    font-family: 'Josefin Sans' , sans-serif;
+    font-size: small;
+    justify-content: center;
+    border-radius: 20px;
+    height: 0.9cm;
+}
+
+/* Media queries  */
+
+@media screen and (min-width: 1024px){
+    .navtitle button{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        
+    }
+
+    .mainnavroutes{
+        display: block;
+    }
+
+    .nav .navinput{
+        display: flex;
+    }
+
+    .sidebar{
+        display: none;
+    }
+    .headerMain{
+        flex-direction: row;
+        gap: 0px;
+
+    }
+    .And-navinput{
+        display: none;
+    }
+
+    .new-product-container  .new-product img{
+    
+        width: 100px;
+
+    }
+
+
+    .new-launches .products{
+        
+        flex-direction: row;
+    }
+
+    .product-detail .product{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        
+    }
+
+
+.product-detail .product .product-image{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.product-detail .product .product-data{
+    width: 50%;
+    padding: 20px;
+    
+}
+
+.footerSection .footer-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3%;
+    width: 70%;
+}
+
+    
+
+.footer-footer{
+    padding: 20px;
+    margin-top: 20px;
+    border-top:  2px solid rgba(0, 0, 0, 0.507);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.login-form{
+    width: 30%;
+}
+
+}
+
+
+
+

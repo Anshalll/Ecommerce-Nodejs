@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Anshal's Ecommerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="stylesheet/index.css" />
+  <meta name="description" content="This is anshals Ecommerce admin Panel" />
+</head>
+
+<body>
+  <section aria-label="Admin-Section" class="w-[100%] p-[20px] h-screen bg-[#E3E6E6] overflow-y-auto flex flex-col">
+    <div class="w-[100%] h-[10%]">
+      <h1 class="AdminText float-left text-2xl">Anshal's Ecommerce</h1>
+      <button class="AdminLogout float-right px-[20px] py-[5px] rounded-full">
+        Logout
+      </button>
+    </div>
+
+    <div class="h-[90%] rounded-lg p-[20px] text-sm">
+      <div class="w-[100%] bg-white flex-col gap-[20px] flex p-[20px] rounded-lg h-[80%] box-border overflow-y-auto">
+        <p>Upload Item</p>
+
+        <p class="text-red-600">
+          <%= locals.errors %>
+        </p>
+        <form action="" method="post" class="flex" enctype="multipart/form-data">
+
+
+          <div class="flex flex-col w-[50%] gap-[20px]">
+            <select name="category" class="w-max h-max p-[10px] border-2 border-yellow-400 rounded-lg" id="category">
+              <optgroup label="sound">
+                <option value="headphones" id="headphones">Head Phones</option>
+                <option value="speakers" id="speakers">Speakers</option>
+                <option value="earphones" id="earphones">Ear Phones</option>
+                <option value="earbuds" id="earbuds">Ear Buds</option>
+              </optgroup>
+
+              <optgroup label="watches">
+                <option value="smartwatches" id="smartwatches">
+                  Smart watches
+                </option>
+                <option value="fitnesswatches" id="fitnesswatches">
+                  Fitness Watches
+                </option>
+              </optgroup>
+
+              <optgroup label="smartphones">
+
+                <option value="mobile">Mobile</option>
+
+              </optgroup>
+
+              <optgroup label="pc">
+                <option value="monitors">Monitors</option>
+                <option value="laptops">Laptops</option>
+              </optgroup>
+
+
+              <optgroup label="tvs">
+                <option value="tv">Tv</option>
+              </optgroup>
+
+              <optgroup label="home Accessories">
+                <option value="refregirators" id="refregirators">Refregirators</option>
+
+                <option value="ac" id="ac">Ac</option>
+                <option value="ovens" id="ovens">Ovens</option>
+                <option value="washingmachine" id="washingmachines">Washing Machines</option>
+
+              </optgroup>
+
+              <optgroup label="pc_accessories">
+                <option value="mouse" id="mouse">Mouse</option>
+                <option value="keyboards" id="keyboards">Keyboards</option>
+              </optgroup>
+
+            </select>
+            <div class="flex flex-col gap-[20px] w-max">
+              <label for="title">Product Title</label>
+              <input id="title" name="title" type="text"
+                class="bg-slate-200 focus:outline-none border-2 border-yellow-400 rounded-lg text-sm p-[10px]">
+
+            </div>
+
+            <div class="flex flex-col gap-[20px] w-max">
+              <label for="price">Product Price</label>
+              <input type="number" id="price" name="price"
+                class="bg-slate-200 focus:outline-none border-2 border-yellow-400 rounded-lg text-sm p-[10px]">
+
+            </div>
+            <div class="flex flex-col gap-[20px] w-max">
+              <label for="product_image">Product Image</label>
+
+              <input type="file" name="product_image" id="product_image">
+            </div>
+          </div>
+
+
+          <div class="flex flex-col gap-[20px] w-[50%]">
+
+            <div class="flex flex-col gap-[20px] w-max">
+              <label for="description">Product description</label>
+              <textarea type="text" id="description" name="description"
+                class="bg-slate-200 focus:outline-none border-2 border-yellow-400 rounded-lg text-sm p-[10px]"></textarea>
+
+            </div>
+
+            <div>
+              Discount:<input type="radio" name="sales" id="discount">
+
+            </div>
+
+            <button type="submit" class="bg-green-600 px-[20px] py-[10px] rounded-full text-black w-max">Upload
+              Product</button>
+
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
